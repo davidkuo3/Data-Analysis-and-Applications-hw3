@@ -31,11 +31,15 @@ Thumbs.db
 pip-log.txt
 pip-delete-this-directory.txt
 
+
 # Model artifacts and large binaries (optional)
 # Ignore model artifacts by default to avoid committing large binary files. If you want
 # to include model artifacts in the repo for demo deployment, remove or modify these lines.
 **/models/*.joblib
 **/models/*.pkl
+
+# Allow the web demo model to be bundled (we explicitly include this one file)
+!experiments/spam-classifier/web/models/*.joblib
 
 # Local data
 **/data/*
