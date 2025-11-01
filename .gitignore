@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+.venv/
+/.venv/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Pytest
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Virtual env and pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Model artifacts and large binaries (optional)
+# Ignore model artifacts by default to avoid committing large binary files. If you want
+# to include model artifacts in the repo for demo deployment, remove or modify these lines.
+**/models/*.joblib
+**/models/*.pkl
+
+# Local data
+**/data/*
