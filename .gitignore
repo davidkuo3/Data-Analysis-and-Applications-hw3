@@ -43,3 +43,6 @@ pip-delete-this-directory.txt
 
 # Local data
 **/data/*
+
+# Allow the spam-classifier dataset to be included for the demo
+!experiments/spam-classifier/data/sms_spam_no_header.csv
