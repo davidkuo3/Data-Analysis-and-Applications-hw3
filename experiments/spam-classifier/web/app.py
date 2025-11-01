@@ -10,6 +10,10 @@ except Exception:  # pragma: no cover - streamlit only required at runtime
 
 
 MODEL_REL_PATHS = [
+    # Prefer bundled web model (for Streamlit deploy)
+    os.path.join("models", "phase2_logreg.joblib"),
+    os.path.join("models", "baseline_svm.joblib"),
+    # Fallback to phase1 models
     os.path.join("..", "phase1", "models", "phase2_logreg.joblib"),
     os.path.join("..", "phase1", "models", "baseline_svm.joblib"),
 ]
@@ -63,7 +67,8 @@ def predict_text(model, vectorizer, text: str) -> tuple[str, float]:
 
 def load_dataset_stats():
     # Try to read the SMS dataset and return class distribution
-    data_candidate = Path(__file__).parents[2] / "data" / "sms_spam_no_header.csv"
+    # Dataset is expected under experiments/spam-classifier/data/
+    data_candidate = Path(__file__).parents[1] / "data" / "sms_spam_no_header.csv"
     if not data_candidate.exists():
         return None
     import pandas as pd
